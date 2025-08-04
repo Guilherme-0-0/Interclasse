@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interclasse — Chave</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* garantir que os placares (números) não aparecem aqui */
+    .score-input,
+    .match .team div:last-child {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title-wrapper">
+      <h1>Interclasse</h1>
+      <div class="sub">Chave Eliminatória</div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="bracket.html" class="nav-item">Chave</a>
+      <a href="placar.html" class="nav-item">Placar</a>
+    </div>
+    <div id="mode-switch">
+      <button id="spectator-btn" class="active">Espectador</button>
+      <button id="admin-btn">Organizador</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="admin-login-section" class="card hidden">
+      <h2>Login do Organizador</h2>
+      <div class="form-group">
+        <label for="admin-email">Gmail</label>
+        <input type="email" id="admin-email" placeholder="seu@gmail.com" />
+      </div>
+      <div class="form-group">
+        <label for="admin-password">Senha</label>
+        <input type="password" id="admin-password" placeholder="senha segura" />
+      </div>
+      <div class="actions">
+        <button id="login-btn">Entrar</button>
+        <button id="register-admin-btn" class="secondary">Registrar</button>
+        <button id="logout-btn" class="hidden secondary">Sair</button>
+      </div>
+      <div id="admin-msg" class="small-text"></div>
+    </section>
+
+    <section id="spectator-section" class="card">
+      <h2>Chave / Bracket</h2>
+      <div id="bracket"></div>
+    </section>
+
+    <footer>
+      <small>Interclasse — Chave Eliminatória</small>
+    </footer>
+  </main>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interclasse - Sistema de Gestão</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="overlay"></div>
+  <header>
+    <div class="title-wrapper">
+      <h1>Interclasse</h1>
+      <div class="sub">Gestão de times e chaves</div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="bracket.html" class="nav-item">Chave</a>
+      <a href="placar.html" class="nav-item">Placar</a>
+    </div>
+    <div id="mode-switch">
+      <button id="spectator-btn" class="active">Espectador</button>
+      <button id="admin-btn">Organizador</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Login / Admin -->
+    <section id="admin-login-section" class="card hidden">
+      <h2>Login do Organizador</h2>
+      <div class="form-group">
+        <label for="admin-email">Gmail</label>
+        <input type="email" id="admin-email" placeholder="seu@gmail.com" />
+      </div>
+      <div class="form-group">
+        <label for="admin-password">Senha</label>
+        <input type="password" id="admin-password" placeholder="senha segura" />
+      </div>
+      <div class="actions">
+        <button id="login-btn">Entrar</button>
+        <button id="register-admin-btn" class="secondary">Registrar</button>
+        <button id="logout-btn" class="hidden secondary">Sair</button>
+      </div>
+      <div id="admin-msg" class="small-text"></div>
+    </section>
+
+    <!-- Espectador / Visão Geral -->
+    <section id="spectator-section" class="card">
+      <div class="flex-between">
+        <div class="panel">
+          <h2>Times</h2>
+          <ul id="team-list"></ul>
+        </div>
+      </div>
+
+      <div class="bracket-wrapper">
+        <h2>Chave Eliminatória</h2>
+        <div id="bracket"></div>
+      </div>
+    </section>
+
+    <!-- Admin Panel -->
+    <section id="admin-panel" class="card hidden">
+      <h2>Painel do Organizador</h2>
+      <div class="flex-between">
+        <!-- Cadastro de time -->
+        <div class="box">
+          <h3>Cadastro de Time</h3>
+          <div class="form-group">
+            <label for="team-name">Nome do Time</label>
+            <input type="text" id="team-name" placeholder="Ex: 3ºA" />
+          </div>
+          <div class="form-group">
+            <label for="team-coach">Responsável / Técnico</label>
+            <input type="text" id="team-coach" placeholder="Nome" />
+          </div>
+          <div class="form-group">
+            <label>Participantes</label>
+            <div id="participants-wrapper">
+              <div class="participant-row">
+                <input type="text" class="participant-input" placeholder="Nome do participante" />
+                <button class="remove-participant-btn" aria-label="remover">✕</button>
+              </div>
+            </div>
+            <button id="add-participant-btn" class="secondary small">Adicionar participante</button>
+          </div>
+          <button id="add-team-btn">Adicionar Time</button>
+          <div id="team-msg" class="small-text"></div>
+        </div>
+
+        <!-- Controle de chave -->
+        <div class="box">
+          <h3>Chave / Bracket</h3>
+          <div class="row">
+            <button id="generate-bracket-btn">Gerar Chave</button>
+            <button id="reset-bracket-btn" class="secondary">Resetar</button>
+          </div>
+          <div class="small-text">Eliminatória simples, avança automaticamente.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-left">
+        <small>Interclasse &mdash; front-end moderno, dados locais</small>
+      </div>
+      <div class="footer-right">
+        <div class="led"></div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
